@@ -3,17 +3,17 @@ import time
 from twilio.rest import Client
 
 
-account_sid = "AC6539b20aac8f122fccd2654f98c57fad"
-auth_token = "9b568826df59a8b04aaae9fb307c0c17"
+account_sid = ""
+auth_token = ""
 
-twilioNumber = '+19183022219'
+twilioNumber = ''
 
 client = Client(account_sid, auth_token)
 
 def textmyself():
 	print("Please enter a message you wish to send in the text: ")	
 	message = input()
-	print("Please enter your target number: " + "in this form: +18482345354")
+	print("Please enter your target number: " + "in this form:")
 	target = input()
 	client.api.account.messages.create(
 	    to=target,
@@ -23,7 +23,7 @@ def textmyself():
 
 def textdaily(message):
 	client.api.account.messages.create(
-	    to='+18482345354',
+	    to='',
 	    from_=twilioNumber,
     	    body=message)
 
